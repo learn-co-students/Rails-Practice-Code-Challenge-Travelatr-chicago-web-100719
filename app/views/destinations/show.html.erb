@@ -1,0 +1,29 @@
+<h1><%=@destination.name%></h1>
+<h4><%=@destination.country%></h4>
+<h3>Average age of bloggers who have written about <%=@destination.name%>: <%=@destination.average_age_of_bloggers%></h3>
+<br><br>
+<h2><%="🎉"%>Featured Post<%="🎉"%></h2>
+<h3><%=link_to @featured_post.title, @featured_post%></h3>
+<p>--by <%=link_to @featured_post.blogger.name, @featured_post.blogger%></p>
+<%=@featured_post.content%>
+<br>
+<%=@featured_post.likes_with_image%>
+<br><br>
+
+
+<h2>Most Recent Posts About <%=@destination.name%>:</h2>
+  <%if !@posts.empty?%>
+   <%@posts.each do |post|%>
+    <h3><%=link_to post.title, post%></h3>
+    <p>--by <%=link_to post.blogger.name, post.blogger%></p>
+    <%=post.content%>
+    <br>
+    <%=post.likes_with_image%>
+    <br><br>
+    <%end%>
+  <%else%>
+    None
+  <%end%>
+
+
+

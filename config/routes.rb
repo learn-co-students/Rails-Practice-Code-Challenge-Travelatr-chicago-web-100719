@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :bloggers, only: [:new, :create, :index, :show]
+  resources :destinations, only: [:show, :index, :edit, :update]
+  resources :posts, only: [:show, :new, :create, :edit, :update]
 end
