@@ -1,0 +1,8 @@
+<h1><%=@post.title%></h1>
+by <%=link_to @post.blogger.name, @post.blogger%>
+<br>
+<h3>Location: <%=link_to @post.destination.name, @post.destination%></h3>
+<br><br>
+<%=@post.content%>
+<br>
+<%=@post.likes_with_image%>

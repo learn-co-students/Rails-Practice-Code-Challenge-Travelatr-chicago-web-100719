@@ -1,0 +1,30 @@
+<h1><%=@blogger.name%></h1>
+<u>Age:</u>
+<%=@blogger.age%>
+<br><br>
+<u>Bio:</u>
+<br>
+"<%=@blogger.bio%>"
+<br><br>
+
+<h2>Featured Post:</h2>
+<h3><%=@featured_post.title%></h3>
+Location: <%=link_to @featured_post.destination.name, @featured_post.destination%>
+<br>
+<%=@featured_post.content%>
+<br>
+<%=@featured_post.likes_with_image%>
+
+<br><br>
+<h2>All Posts:</h2>
+<%@posts.each do |post|%>
+  <h3><%=post.title%></h3>
+  Location: <%=link_to post.destination.name, post.destination%>
+  <br>
+  <%=post.content%>
+  <br>
+  <%=post.likes_with_image%>
+  <br>
+<%end%>
+
+
