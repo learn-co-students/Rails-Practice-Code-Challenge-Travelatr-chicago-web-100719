@@ -1,0 +1,12 @@
+<h1><%= @destination.name %></h1>
+<h3>Five Recent Posts</h3>
+<ul>
+    <% @last_five_posts.each do |post| %>
+        <li><%= post.title %></li>
+    <% end %>
+</ul>
+<% if @featured_post %>
+    <%= link_to @featured_post.title, post_path(@featured_post) %>
+<% else %>
+    <p>No Posts</p>
+<% end %>
